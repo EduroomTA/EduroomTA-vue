@@ -1,0 +1,59 @@
+.my-timepicker-div{
+  position: absolute;
+  z-index: 5;
+  text-align: center;
+  border-radius: 4px;
+  background-color: white;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  right: 0 !important;
+  left: auto !important;
+}
+
+.my-timepicker-div div{
+
+  margin: 0rem;
+}
+
+.my-timepicker-div option:disabled{
+  color: #bbb;
+  font-style: italic;
+}
+
+.my-timepicker-div option {
+  text-align: center;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: 0.2s all;
+}
+
+.my-timepicker-div option:hover {
+  background-color: var(--color-primary-smoth2);
+}
+
+.my-timepicker-div select {
+  display: block;
+  height: auto !important;
+  padding: 0 !important;
+  border: 0;
+}
+
+.my-timepicker-div .row {
+  margin: 0 !important;
+}
+
+.my-timepicker-div select::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.my-timepicker-div select::-webkit-scrollbar {
+  width: 1px;
+}
+
+.my-timepicker-div select::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.header-time {
+  padding: 0.5rem !important;
+  border-bottom: 1px solid #eee;
+}

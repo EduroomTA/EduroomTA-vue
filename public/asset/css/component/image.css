@@ -1,0 +1,10 @@
+/*IMAGE*/
+
+.img-bullet {
+	border-radius: 50%; 
+	overflow: hidden;
+}
+
+.img-bullet img {
+	max-width: -webkit-fill-available;
+}

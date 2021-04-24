@@ -1,0 +1,564 @@
+/*BUTTON FLAT*/
+.matter-button-text {
+	position: relative;
+	display: inline-block;
+	box-sizing: border-box;
+	margin: 0;
+	border: none;
+	border-radius: 4px;
+	padding: 0 8px;
+	min-width: 64px;
+	height: 36px;
+	vertical-align: middle;
+	text-align: center;
+	text-overflow: ellipsis;
+	color: var(--dark1);
+	background-color: transparent;
+	font-family: var(--matter-font-family, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 36px;
+	outline: none;
+	cursor: pointer;
+}
+
+.matter-button-text::-moz-focus-inner {
+	border: none;
+}
+
+/* Highlight, Ripple */
+.matter-button-text::before,
+.matter-button-text::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border-radius: inherit;
+	opacity: 0;
+}
+
+.matter-button-text::before {
+	background-color: var(--color-primary-smoth1);
+	transition: opacity 0.2s;
+}
+
+.matter-button-text::after {
+	background: radial-gradient(circle at center, currentColor 1%, transparent 1%) center/10000% 10000% no-repeat;
+	transition: opacity 1s, background-size 0.5s;
+}
+
+/* Hover, Focus */
+.matter-button-text:hover::before {
+	opacity: 0.04;
+}
+
+.matter-button-text:focus::before {
+	opacity: 0.12;
+}
+
+.matter-button-text:hover:focus::before {
+	opacity: 0.16;
+}
+
+/* Active */
+.matter-button-text:active::after {
+	opacity: 0.16;
+	background-size: 100% 100%;
+	transition: background-size 0s;
+}
+
+/* Disabled */
+.matter-button-text:disabled {
+	color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.38);
+	background-color: transparent;
+	cursor: initial;
+}
+
+.matter-button-text:disabled::before,
+.matter-button-text:disabled::after {
+	opacity: 0;
+}
+
+/* With Icon*/
+.matter-button-text i {
+	line-height: inherit !important;
+	height: auto !important;
+}
+
+
+
+
+
+
+
+
+
+
+/*BUTTON BORDER*/
+.matter-button-outlined {
+	--matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 150, 243));
+	position: relative;
+	display: inline-block;
+	box-sizing: border-box;
+	margin: 0;
+	border: solid 1px; /* Safari */
+	border-color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.24);
+	border-radius: 4px;
+	padding: 0 16px;
+	min-width: 64px;
+	height: 36px;
+	vertical-align: middle;
+	text-align: center;
+	text-overflow: ellipsis;
+	color: var(--color-primary);
+	background-color: transparent;
+	font-family: var(--matter-font-family, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 34px;
+	outline: none;
+	cursor: pointer;
+}
+
+.matter-button-outlined::-moz-focus-inner {
+	border: none;
+}
+
+/* Highlight, Ripple */
+.matter-button-outlined::before,
+.matter-button-outlined::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border-radius: 3px;
+	opacity: 0;
+}
+
+.matter-button-outlined::before {
+	background-color: rgb(var(--matter-helper-theme));
+	transition: opacity 0.2s;
+}
+
+.matter-button-outlined::after {
+	background: radial-gradient(circle at center, currentColor 1%, transparent 1%) center/10000% 10000% no-repeat;
+	transition: opacity 1s, background-size 0.5s;
+}
+
+/* Hover, Focus */
+.matter-button-outlined:hover::before {
+	opacity: 0.04;
+}
+
+.matter-button-outlined:focus::before {
+	opacity: 0.12;
+}
+
+.matter-button-outlined:hover:focus::before {
+	opacity: 0.16;
+}
+
+/* Active */
+.matter-button-outlined:active::after {
+	opacity: 0.16;
+	background-size: 100% 100%;
+	transition: background-size 0s;
+}
+
+/* Disabled */
+.matter-button-outlined:disabled {
+	color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.38);
+	background-color: transparent;
+	cursor: initial;
+}
+
+.matter-button-outlined:disabled::before,
+.matter-button-outlined:disabled::after {
+	opacity: 0;
+}
+
+/* With Icon*/
+.matter-button-outlined i {
+	line-height: inherit !important;
+	height: auto !important;
+}
+
+.sidenav-trigger.matter-button-outlined {
+	height: auto;
+	float: initial;
+}
+
+
+
+
+
+
+
+
+
+/*BUTTON CIRCLE*/
+.dark-mode .matter-button-circle {
+	color: var(--color-white);
+}
+
+.matter-button-circle {
+	position: relative;
+	display: inline-block;
+	box-sizing: border-box;
+	margin: 0;
+	border: none;
+	border-radius: 50%;
+	padding: 0 8px;
+	width: 40px;
+	height: 40px;
+	vertical-align: middle;
+	text-align: center;
+	text-overflow: ellipsis;
+	color: var(--color-dark1);
+	background-color: transparent;
+	font-family: var(--matter-font-family, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 41px;
+	outline: none;
+	cursor: pointer;
+	transition: background-color 0.2s;
+}
+
+.matter-button-circle::-moz-focus-inner {
+	border: none;
+}
+
+/* Highlight, Ripple */
+.matter-button-circle::before,
+.matter-button-circle::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border-radius: inherit;
+	opacity: 0;
+}
+
+.matter-button-circle::before {
+	background-color: var(--color-primary-smoth);
+	transition: opacity 0.2s;
+}
+
+.matter-button-circle::after {
+	background: radial-gradient(circle at center, currentColor 1%, transparent 1%) center/10000% 10000% no-repeat;
+	transition: opacity 1s, background-size 0.5s;
+}
+
+/* Hover, Focus */
+
+.matter-button-circle:hover {
+	background-color: var(--color-dark9);
+}
+
+
+.matter-button-circle:hover::before {
+	opacity: 0.04;
+}
+
+.matter-button-circle:focus::before {
+	opacity: 0.12;
+}
+
+.matter-button-circle:hover:focus::before {
+	opacity: 0.16;
+}
+
+/* Active */
+.matter-button-circle:active::after {
+	opacity: 0.16;
+	background-size: 100% 100%;
+	transition: background-size 0s;
+}
+
+/* Disabled */
+.matter-button-circle:disabled {
+	color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.38);
+	background-color: transparent;
+	cursor: initial;
+}
+
+.matter-button-circle:disabled::before,
+.matter-button-circle:disabled::after {
+	opacity: 0;
+}
+
+/* With Icon*/
+.matter-button-circle i {
+	line-height: inherit !important;
+	height: auto !important;
+}
+
+.sidenav-trigger.matter-button-circle {
+	height: auto;
+	float: initial;
+}
+
+
+
+
+
+
+
+
+
+/*BUTTON CONTAINED*/
+.matter-button-contained {
+	--matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 150, 243));
+	--matter-helper-ontheme: var(--matter-ontheme-rgb, var(--matter-onprimary-rgb, 255, 255, 255));
+	position: relative;
+	display: inline-block;
+	box-sizing: border-box;
+	border: none;
+	border-radius: 4px;
+	padding: 0 16px;
+	min-width: 64px;
+	height: 36px;
+	vertical-align: middle;
+	text-align: center;
+	text-overflow: ellipsis;
+	color: #FFF;
+	background-color: var(--color-primary);
+	box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+	font-family: var(--matter-font-family, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 36px;
+	outline: none;
+	cursor: pointer;
+	transition: box-shadow 0.2s;
+}
+
+.matter-button-contained::-moz-focus-inner {
+	border: none;
+}
+
+/* Highlight, Ripple */
+.matter-button-contained::before,
+.matter-button-contained::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border-radius: inherit;
+	opacity: 0;
+}
+
+.matter-button-contained::before {
+	background-color: var(--color-primary-dark);
+	transition: opacity 0.2s;
+}
+
+.matter-button-contained::after {
+	background: radial-gradient(circle at center, currentColor 1%, transparent 1%) center/10000% 10000% no-repeat;
+	transition: opacity 1s, background-size 0.5s;
+}
+
+/* Hover, Focus */
+.matter-button-contained:hover,
+.matter-button-contained:focus {
+	box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.matter-button-contained:hover::before {
+	opacity: 0.08;
+}
+
+.matter-button-contained:focus::before {
+	opacity: 0.24;
+}
+
+.matter-button-contained:hover:focus::before {
+	opacity: 0.32;
+}
+
+/* Active */
+.matter-button-contained:active {
+	box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.matter-button-contained:active::after {
+	opacity: 0.32;
+	background-size: 100% 100%;
+	transition: background-size 0s;
+}
+
+/* Disabled */
+.matter-button-contained:disabled {
+	color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.38);
+	background-color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.12);
+	box-shadow: none;
+	cursor: initial;
+}
+
+.matter-button-contained:disabled::before,
+.matter-button-contained:disabled::after {
+	opacity: 0;
+}
+
+
+
+
+
+/*ICON BUTTON*/
+.button-icon i {
+	line-height: inherit;
+}
+
+
+/*ACTIVE BUTTON*/
+.active-button {
+	background-color: var(--color-dark4) !important;
+}
+
+
+
+/*BTN FULL*/
+button.btn-full,
+a.btn-full {
+	width: 100%
+}
+
+
+/*BTN NO SHADOW*/
+button.btn-ns,
+a.btn-ns {
+	box-shadow: none;
+}
+
+
+
+.white-border {
+	border-color: #fff;
+}
+
+button.matter-large,
+a.matter-large {
+	line-height: 53px; 
+	height: 55px;
+}
+
+
+
+
+.btn-exam-menu {
+	margin:0.5rem auto; 
+	height: 35px; 
+	width: 35px; 
+	line-height: 35px; 
+	border: 1px solid var(--color-dark3);
+	text-align: center;
+}
+
+.active .btn-exam-menu {
+	background-color: var(--color-primary);
+	color: #fff;
+}
+
+.btn-exam-menu:hover {
+	background-color: var(--color-primary-soft2);
+}
+
+
+
+
+.property-notif {
+
+}
+
+.property-notif .land{
+	line-height: 1.2rem;
+	width: 1.2rem;
+	height: 1.2rem;
+	border-radius: 50%;
+	margin: auto;
+	text-align: center;
+}
+
+.property-notif .land .num{
+	border-radius: 50%;
+} 
+
+a.text-link {
+
+}
+
+.text-link.in-card:hover p{
+	text-decoration: underline;
+	color: var(--color-primary) !important;
+	cursor: pointer;
+}
+
+a.text-link:hover {
+	text-decoration: underline;
+	color: var(--color-primary) !important;
+}
+
+a.text-link.white-text:hover {
+	text-decoration: underline;
+	color: var(--color-white) !important;
+}
+
+a.text-link.h5 {
+	font-size: 1.64rem;
+}
+
+.vue-loading-button {
+	font-size: 14px !important;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+
+
+
+
+.btn-bigger-border {
+	height: 50px;
+	border-radius: 30px;
+	padding: 0 20px;
+}
+
+button.left-align,
+a.left-align {
+	text-align: left !important;
+}
+
+button.right-align,
+a.right-align {
+	text-align: right !important;
+}
+
+
+
+a.input-link p{
+	padding-left: 0.75rem;
+	background-color: var(--color-dark5);
+	border-radius: 20px;
+	padding: 0.4rem 1rem;
+	margin-left: 1rem !important;
+}
+
+a.input-link:hover p{
+	background-color: var(--color-dark3);
+}
+
+button.no-border,
+a.no-border {
+	border: none !important;
+}

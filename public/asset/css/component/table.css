@@ -1,0 +1,121 @@
+/*TABLE*/
+:root {
+	--heghtnya: auto;
+}
+
+.dark-mode tr{
+	border-bottom: 1px solid var(--color-dark8)
+}
+
+th.action {
+	width: 100px;
+}
+
+.table-scroll-x {
+	overflow-y: hidden;
+	overflow-x: scroll;
+	transition: 0.5s all;
+}
+
+.table-scroll-x.sticky-left table th:first-child {
+	position: sticky;
+	position: -webkit-sticky;
+	left: 0;
+	z-index: 1;
+	background-color: #fff
+}
+
+.table-scroll-x.sticky-left table td:first-child{
+	position: sticky;
+	position: -webkit-sticky;
+	left: 0;
+	z-index: 1;
+	background-color: #fff
+}
+
+.table-scroll-x::-webkit-scrollbar {
+	height: 10px;
+	cursor: pointer;
+}
+
+.table-scroll-x::-webkit-scrollbar-track {
+	background-color: transparent;
+	height: 10px;
+	cursor: pointer;
+}
+
+.table-scroll-x::-webkit-scrollbar-thumb {
+	background-color: var(--color-dark3);
+	cursor: pointer;
+	border-radius: 8px;
+}
+
+.table-scroll-x.table-scroll-y .left-header {
+	width: 340px !important;
+	z-index: 1004;
+	position: fixed;
+	top: 63.6px;
+	padding: 37.5px 0;
+	border-bottom: 1px solid var(--color-dark3);
+	border-top: 1px solid var(--color-dark3);
+	border-right: 1px solid var(--color-dark3);
+	left: 1px;
+} 
+
+table.no-border tr{
+	border:0;
+}
+
+table.border td,
+table.border th{
+	border: 1px solid var(--color-dark3);
+}
+
+.table-scroll-x.sticky-left .ss::after {
+	height: var(--heghtnya);
+	-webkit-box-shadow: 0 5px 8px 0 rgba(0,0,0,0.14), 0 1px 14px 0 rgba(0,0,0,0.12), 0 3px 5px -1px rgba(0,0,0,0.2);
+	box-shadow: 0 5px 8px 0 rgba(0,0,0,0.14), 0 1px 14px 0 rgba(0,0,0,0.12), 0 3px 5px -1px rgba(0,0,0,0.2);
+	content: '';
+	pointer-events: none;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100vw;
+	z-index: -1;
+}
+
+
+table.widt-maximum {
+	width: max-content
+}
+
+th.fit-content {
+	width: fit-content !important;
+}
+
+
+
+
+table.clickable tr.content{
+	cursor: pointer;
+}
+
+
+
+table.highlight.primary-highlight > tbody > tr {
+	-webkit-transition: background-color .25s ease;
+	transition: background-color .25s ease;
+}
+
+table.highlight.primary-highlight > tbody > tr:hover {
+	background-color: var(--color-primary-hover);
+}
+
+table.border-radius-row tr.content td:first-child { 
+	border-top-left-radius: 30px;
+	border-bottom-left-radius: 30px;
+}
+table.border-radius-row tr.content td:last-child { 
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 30px;
+}

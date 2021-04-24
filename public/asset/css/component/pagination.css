@@ -1,0 +1,10 @@
+/*PAGINATION*/
+
+.pagination .active {
+	background-color: var(--color-primary) !important;
+	border-radius: 50%;
+}
+
+.pagination li.number {
+	border-radius: 50%;
+}

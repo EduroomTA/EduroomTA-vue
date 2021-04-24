@@ -1,0 +1,1622 @@
+/*INPUT FILLED*/
+.matter-textfield-filled {
+	--matter-helper-theme: var(--color-primary);
+	position: relative;
+	display: inline-block;
+	font-family: var(--matter-font-family, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+/* Input, Textarea */
+.matter-textfield-filled > input,
+.matter-textfield-filled > textarea,
+.matter-textfield-filled > .select-wrapper {
+	display: block;
+	box-sizing: border-box;
+	margin: 0;
+	border: none;
+	border-top: solid 24px transparent;
+	border-bottom: solid 1px rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.6);
+	border-radius: 4px 4px 0 0;
+	padding: 0 12px 7px;
+	width: 100%;
+	height: inherit;
+	color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.87);
+	-webkit-text-fill-color: currentColor; /* Safari */
+	background-color: var(--color-dark4);
+	box-shadow: none; /* Firefox */
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	caret-color: rgb(var(--matter-helper-theme));
+	transition: border-bottom 0.2s, background-color 0.2s;
+}
+
+.matter-textfield-filled > .select-wrapper {
+	padding-bottom: 0;
+	border-top: solid 10.5px transparent;
+}
+
+/* Span */
+.matter-textfield-filled > input + span,
+.matter-textfield-filled > textarea + span,
+.matter-textfield-filled > .select-wrapper + span,
+.matter-textfield-filled > input + .my-timepicker-div + span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: block;
+	box-sizing: border-box;
+	padding: 7px 12px 0;
+	color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.6);
+	font-size: 75%;
+	line-height: 18px;
+	pointer-events: none;
+	transition: color 0.2s, font-size 0.2s, line-height 0.2s;
+}
+
+/* Underline */
+.matter-textfield-filled > input + span::after,
+.matter-textfield-filled > textarea + span::after,
+.matter-textfield-filled > .select-wrapper + span::after,
+.matter-textfield-filled > input + .my-timepicker-div + span::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	display: block;
+	width: 100%;
+	height: 2px;
+	background-color: var(--color-primary);
+	transform-origin: bottom center;
+	transform: scaleX(0);
+	transition: transform 0.3s;
+}
+
+/* Hover */
+.matter-textfield-filled:hover > input,
+.matter-textfield-filled:hover > textarea,
+.matter-textfield-filled:hover > .select-wrapper {
+	border-bottom-color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.87);
+	background-color: var(--color-dark10);
+}
+
+/* Placeholder-shown */
+.matter-textfield-filled > input:not(:focus):placeholder-shown + span,
+.matter-textfield-filled > textarea:not(:focus):placeholder-shown + span,
+.matter-textfield-filled > .select-wrapper:not(:focus):placeholder-shown + span,
+.matter-textfield-filled > input:not(:focus):placeholder-shown + .my-timepicker-div + span {
+	font-size: inherit;
+	line-height: 48px;
+}
+
+/* Focus */
+.matter-textfield-filled > input:focus,
+.matter-textfield-filled > textarea:focus,
+.matter-textfield-filled > .select-wrapper:focus {
+	outline: none;
+}
+
+.matter-textfield-filled > input:focus + span,
+.matter-textfield-filled > textarea:focus + span,
+.matter-textfield-filled > .select-wrapper:focus + span,
+.matter-textfield-filled > input:focus + .my-timepicker-div + span {
+	color: var(--color-primary);
+}
+
+.matter-textfield-filled > input:focus + span::after,
+.matter-textfield-filled > textarea:focus + span::after,
+.matter-textfield-filled > .select-wrapper:focus + span::after,
+.matter-textfield-filled > input:focus + .my-timepicker-div + span::after {
+	transform: scale(1);
+}
+
+.matter-textfield-filled > input.invalid[type=text]:not(.browser-default),
+.matter-textfield-filled > input.invalid[type=text]:not(.browser-default):focus,
+.matter-textfield-filled > input.invalid[type=password]:not(.browser-default),
+.matter-textfield-filled > input.invalid[type=password]:not(.browser-default):focus,
+.matter-textfield-filled > input.invalid[type=email]:not(.browser-default),
+.matter-textfield-filled > input.invalid[type=email]:not(.browser-default):focus,
+.matter-textfield-filled > input.invalid[type=url]:not(.browser-default),
+.matter-textfield-filled > input.invalid[type=url]:not(.browser-default):focus,
+.matter-textfield-filled > input.invalid[type=time]:not(.browser-default),
+.matter-textfield-filled > input.invalid[type=time]:not(.browser-default):focus,
+.matter-textfield-filled > input.invalid[type=date]:not(.browser-default),
+.matter-textfield-filled > input.invalid[type=date]:not(.browser-default):focus,
+.matter-textfield-filled > input.invalid[type=datetime]:not(.browser-default),
+.matter-textfield-filled > input.invalid[type=datetime]:not(.browser-default):focus,
+.matter-textfield-filled > input.invalid[type=datetime-local]:not(.browser-default),
+.matter-textfield-filled > input.invalid[type=datetime-local]:not(.browser-default):focus,
+.matter-textfield-filled > input.invalid[type=tel]:not(.browser-default),
+.matter-textfield-filled > input.invalid[type=tel]:not(.browser-default):focus,
+.matter-textfield-filled > input.invalid[type=number]:not(.browser-default),
+.matter-textfield-filled > input.invalid[type=number]:not(.browser-default):focus,
+.matter-textfield-filled > input.invalid[type=search]:not(.browser-default),
+.matter-textfield-filled > input.invalid[type=search]:not(.browser-default):focus
+{
+	border-bottom: 1px solid var(--color-danger);
+	-webkit-box-shadow: 0 1.5px 0 -1px var(--color-danger);
+	box-shadow: 0 1.5px 0 -1px var(--color-danger);
+	border-radius: 4px 4px 0 0 !important;
+}
+/* Disabled */
+.matter-textfield-filled > input:disabled,
+.matter-textfield-filled > textarea:disabled {
+	border-bottom-color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.38);
+	color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.38);
+	background-color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.24);
+}
+
+.matter-textfield-filled > input:disabled + span,
+.matter-textfield-filled > textarea:disabled + span {
+	color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.38);
+}
+
+/* Faster transition in Safari for less noticable fractional font-size issue */
+@media not all and (min-resolution:.001dpcm) {
+	@supports (-webkit-appearance:none) {
+		.matter-textfield-filled > input,
+		.matter-textfield-filled > input + span,
+		.matter-textfield-filled > input + span::after,
+		.matter-textfield-filled > textarea,
+		.matter-textfield-filled > textarea + span,
+		.matter-textfield-filled > textarea + span::after,
+		.matter-textfield-filled > .select-wrapper,
+		.matter-textfield-filled > .select-wrapper + span,
+		.matter-textfield-filled > .select-wrapper + span::after,
+		.matter-textfield-filled > input + .my-timepicker-div + span,
+		.matter-textfield-filled > input + .my-timepicker-div + span::after {
+			transition-duration: 0.1s;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+/*OUTLINED*/
+.matter-textfield-outlined {
+	--matter-helper-theme: rgb(var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 150, 243)));
+	--matter-helper-safari1: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.38);
+	--matter-helper-safari2: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.6);
+	--matter-helper-safari3: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.87);
+	position: relative;
+	display: inline-block;
+	padding-top: 6px;
+	font-family: var(--matter-font-family, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+/* Input, Textarea */
+.matter-textfield-outlined > input,
+.matter-textfield-outlined > textarea,
+.matter-textfield-outlined > .select-wrapper {
+	box-sizing: border-box;
+	margin: 0;
+	border-style: solid;
+	border-width: 1px;
+	border-color: transparent var(--matter-helper-safari2) var(--matter-helper-safari2);
+	border-radius: 4px;
+	padding: 15px 13px 15px;
+	width: 100%;
+	height: inherit;
+	color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.87);
+	-webkit-text-fill-color: currentColor; /* Safari */
+	background-color: transparent;
+	box-shadow: inset 1px 0 transparent, inset -1px 0 transparent, inset 0 -1px transparent;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	caret-color: var(--matter-helper-theme);
+	transition: border 0.2s, box-shadow 0.2s;
+}
+
+.matter-textfield-outlined > .select-wrapper {
+	padding: 0 13px 0 !important
+}
+
+.matter-textfield-outlined > .select-wrapper + span::after {
+	margin-left: 0 !important;
+}
+
+.matter-textfield-outlined > .select-wrapper + span::before {
+	margin-right: 0 !important;
+}
+
+.matter-textfield-outlined > input:not(:focus):placeholder-shown,
+.matter-textfield-outlined > textarea:not(:focus):placeholder-shown,
+.matter-textfield-outlined > .select-wrapper:not(:focus):placeholder-shown {
+	border-top-color: var(--matter-helper-safari2);
+}
+
+/* Span */
+.matter-textfield-outlined > input + span,
+.matter-textfield-outlined > textarea + span,
+.matter-textfield-outlined > .select-wrapper + span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	width: 100%;
+	max-height: 100%;
+	color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.6);
+	font-size: 75%;
+	line-height: 15px;
+	cursor: text;
+	transition: color 0.2s, font-size 0.2s, line-height 0.2s;
+}
+
+.matter-textfield-outlined > .select-wrapper + span {
+	padding: 0 !important;
+}
+
+.matter-textfield-outlined > input:not(:focus):placeholder-shown + span,
+.matter-textfield-outlined > textarea:not(:focus):placeholder-shown + span,
+.matter-textfield-outlined > .select-wrapper:not(:focus):placeholder-shown + span {
+	font-size: inherit;
+	line-height: 68px;
+}
+
+/* Corners */
+.matter-textfield-outlined > input + span::before,
+.matter-textfield-outlined > input + span::after,
+.matter-textfield-outlined > textarea + span::before,
+.matter-textfield-outlined > textarea + span::after,
+.matter-textfield-outlined > .select-wrapper + span::before,
+.matter-textfield-outlined > .select-wrapper + span::after {
+	content: "";
+	display: block;
+	box-sizing: border-box;
+	margin-top: 6px;
+	border-top: solid 1px var(--matter-helper-safari2);
+	min-width: 10px;
+	height: 8px;
+	pointer-events: none;
+	box-shadow: inset 0 1px transparent;
+	transition: border 0.2s, box-shadow 0.2s;
+}
+
+.matter-textfield-outlined > input + span::before,
+.matter-textfield-outlined > textarea + span::before,
+.matter-textfield-outlined > .select-wrapper + span::before {
+	margin-right: 4px;
+	border-left: solid 1px transparent;
+	border-radius: 4px 0;
+}
+
+.matter-textfield-outlined > input + span::after,
+.matter-textfield-outlined > textarea + span::after,
+.matter-textfield-outlined > .select-wrapper + span::after {
+	flex-grow: 1;
+	margin-left: 4px;
+	border-right: solid 1px transparent;
+	border-radius: 0 4px;
+}
+
+.matter-textfield-outlined > input:not(:focus):placeholder-shown + span::before,
+.matter-textfield-outlined > textarea:not(:focus):placeholder-shown + span::before,
+.matter-textfield-outlined > .select-wrapper:not(:focus):placeholder-shown + span::before,
+.matter-textfield-outlined > input:not(:focus):placeholder-shown + span::after,
+.matter-textfield-outlined > textarea:not(:focus):placeholder-shown + span::after,
+.matter-textfield-outlined > .select-wrapper:not(:focus):placeholder-shown + span::after {
+	border-top-color: transparent;
+}
+
+/* Hover */
+.matter-textfield-outlined:hover > input,
+.matter-textfield-outlined:hover > textarea,
+.matter-textfield-outlined:hover > .select-wrapper {
+	border-color: transparent var(--matter-helper-safari3) var(--matter-helper-safari3);
+}
+
+.matter-textfield-outlined:hover > input + span::before,
+.matter-textfield-outlined:hover > textarea + span::before,
+.matter-textfield-outlined:hover > .select-wrapper + span::before,
+.matter-textfield-outlined:hover > input + span::after,
+.matter-textfield-outlined:hover > textarea + span::after,
+.matter-textfield-outlined:hover > .select-wrapper + span::after {
+	border-top-color: var(--matter-helper-safari3);
+}
+
+.matter-textfield-outlined:hover > input:not(:focus):placeholder-shown,
+.matter-textfield-outlined:hover > textarea:not(:focus):placeholder-shown,
+.matter-textfield-outlined:hover > .select-wrapper:not(:focus):placeholder-shown {
+	border-color: var(--matter-helper-safari3);
+}
+
+/* Focus */
+.matter-textfield-outlined > input:focus,
+.matter-textfield-outlined > textarea:focus,
+.matter-textfield-outlined > .select-wrapper:focus {
+	border-color: transparent var(--color-primary) var(--color-primary);
+	box-shadow: inset 1px 0 var(--color-primary), inset -1px 0 var(--color-primary), inset 0 -1px var(--color-primary);
+	outline: none;
+}
+
+.matter-textfield-outlined > input:focus + span,
+.matter-textfield-outlined > textarea:focus + span,
+.matter-textfield-outlined > .select-wrapper:focus + span {
+	color: var(--color-primary);
+}
+
+.matter-textfield-outlined > input:focus + span::before,
+.matter-textfield-outlined > input:focus + span::after,
+.matter-textfield-outlined > textarea:focus + span::before,
+.matter-textfield-outlined > textarea:focus + span::after,
+.matter-textfield-outlined > .select-wrapper:focus + span::before,
+.matter-textfield-outlined > .select-wrapper:focus + span::after {
+	border-top-color: var(--color-primary) !important;
+	box-shadow: inset 0 1px var(--color-primary);
+}
+
+/*VALIDATE FOCUS*/
+.matter-textfield-outlined > input.invalid[type=email]:not(.browser-default):focus,
+.matter-textfield-outlined > input.invalid[type=password]:not(.browser-default):focus,
+.matter-textfield-outlined > input.invalid[type=url]:not(.browser-default):focus,
+.matter-textfield-outlined > input.invalid[type=time]:not(.browser-default):focus,
+.matter-textfield-outlined > input.invalid[type=date]:not(.browser-default):focus,
+.matter-textfield-outlined > input.invalid[type=datetime]:not(.browser-default):focus,
+.matter-textfield-outlined > input.invalid[type=datetime-local]:not(.browser-default):focus,
+.matter-textfield-outlined > input.invalid[type=tel]:not(.browser-default):focus,
+.matter-textfield-outlined > input.invalid[type=number]:not(.browser-default):focus,
+.matter-textfield-outlined > input.invalid[type=search]:not(.browser-default):focus
+{
+	border-color: transparent var(--color-danger) var(--color-danger) !important;
+	box-shadow: inset 1px 0 var(--color-danger), inset -1px 0 var(--color-danger), inset 0 -1px var(--color-danger) !important;
+	outline: none;
+}
+
+.matter-textfield-outlined > input.invalid[type=email]:not(.browser-default):focus + span,
+.matter-textfield-outlined > input.invalid[type=password]:not(.browser-default):focus + span,
+.matter-textfield-outlined > input.invalid[type=url]:not(.browser-default):focus + span,
+.matter-textfield-outlined > input.invalid[type=time]:not(.browser-default):focus + span,
+.matter-textfield-outlined > input.invalid[type=date]:not(.browser-default):focus + span,
+.matter-textfield-outlined > input.invalid[type=datetime]:not(.browser-default):focus + span,
+.matter-textfield-outlined > input.invalid[type=datetime-local]:not(.browser-default):focus + span,
+.matter-textfield-outlined > input.invalid[type=tel]:not(.browser-default):focus + span,
+.matter-textfield-outlined > input.invalid[type=number]:not(.browser-default):focus + span,
+.matter-textfield-outlined > input.invalid[type=search]:not(.browser-default):focus + span,
+{
+	color: var(--color-danger) !important;
+}
+
+.matter-textfield-outlined > input.invalid[type=email]:not(.browser-default):focus + span::before,
+.matter-textfield-outlined > input.invalid[type=email]:not(.browser-default):focus + span::after,
+.matter-textfield-outlined > input.invalid[type=password]:not(.browser-default):focus + span::before,
+.matter-textfield-outlined > input.invalid[type=password]:not(.browser-default):focus + span::after,
+.matter-textfield-outlined > input.invalid[type=url]:not(.browser-default):focus + span::before,
+.matter-textfield-outlined > input.invalid[type=url]:not(.browser-default):focus + span::after,
+.matter-textfield-outlined > input.invalid[type=time]:not(.browser-default):focus + span::before,
+.matter-textfield-outlined > input.invalid[type=time]:not(.browser-default):focus + span::after,
+.matter-textfield-outlined > input.invalid[type=date]:not(.browser-default):focus + span::before,
+.matter-textfield-outlined > input.invalid[type=date]:not(.browser-default):focus + span::after,
+.matter-textfield-outlined > input.invalid[type=datetime]:not(.browser-default):focus + span::before,
+.matter-textfield-outlined > input.invalid[type=datetime]:not(.browser-default):focus + span::after,
+.matter-textfield-outlined > input.invalid[type=datetime-local]:not(.browser-default):focus + span::before,
+.matter-textfield-outlined > input.invalid[type=datetime-local]:not(.browser-default):focus + span::after,
+.matter-textfield-outlined > input.invalid[type=tel]:not(.browser-default):focus + span::before,
+.matter-textfield-outlined > input.invalid[type=tel]:not(.browser-default):focus + span::after,
+.matter-textfield-outlined > input.invalid[type=number]:not(.browser-default):focus + span::before,
+.matter-textfield-outlined > input.invalid[type=number]:not(.browser-default):focus + span::after,
+.matter-textfield-outlined > input.invalid[type=search]:not(.browser-default):focus + span::before,
+.matter-textfield-outlined > input.invalid[type=search]:not(.browser-default):focus + span::after,
+{
+	border-top-color: var(--color-danger) !important;
+	box-shadow: inset 0 1px var(--color-danger) !important;
+}
+
+
+/*VALIDATE NO FOCUS*/
+.matter-textfield-outlined > input.invalid[type=email]:not(.browser-default),
+.matter-textfield-outlined > input.invalid[type=password]:not(.browser-default),
+.matter-textfield-outlined > input.invalid[type=url]:not(.browser-default),
+.matter-textfield-outlined > input.invalid[type=time]:not(.browser-default),
+.matter-textfield-outlined > input.invalid[type=date]:not(.browser-default),
+.matter-textfield-outlined > input.invalid[type=datetime]:not(.browser-default),
+.matter-textfield-outlined > input.invalid[type=datetime-local]:not(.browser-default),
+.matter-textfield-outlined > input.invalid[type=tel]:not(.browser-default),
+.matter-textfield-outlined > input.invalid[type=number]:not(.browser-default),
+.matter-textfield-outlined > input.invalid[type=search]:not(.browser-default)
+{
+	border-color: transparent var(--color-danger) var(--color-danger) !important;
+	box-shadow: inset 1px 0 var(--color-danger), inset -1px 0 var(--color-danger), inset 0 -1px var(--color-danger) !important;
+	outline: none;
+}
+
+.matter-textfield-outlined > input.invalid[type=email]:not(.browser-default):focus + span,
+.matter-textfield-outlined > input.invalid[type=password]:not(.browser-default):focus + span,
+.matter-textfield-outlined > input.invalid[type=url]:not(.browser-default):focus + span,
+.matter-textfield-outlined > input.invalid[type=time]:not(.browser-default):focus + span,
+.matter-textfield-outlined > input.invalid[type=date]:not(.browser-default):focus + span,
+.matter-textfield-outlined > input.invalid[type=datetime]:not(.browser-default):focus + span,
+.matter-textfield-outlined > input.invalid[type=datetime-local]:not(.browser-default):focus + span,
+.matter-textfield-outlined > input.invalid[type=tel]:not(.browser-default):focus + span,
+.matter-textfield-outlined > input.invalid[type=number]:not(.browser-default):focus + span,
+.matter-textfield-outlined > input.invalid[type=search]:not(.browser-default):focus + span
+{
+	color: var(--color-danger) !important;
+}
+
+.matter-textfield-outlined > input.invalid[type=email]:not(.browser-default) + span::before,
+.matter-textfield-outlined > input.invalid[type=email]:not(.browser-default) + span::after,
+.matter-textfield-outlined > input.invalid[type=password]:not(.browser-default) + span::before,
+.matter-textfield-outlined > input.invalid[type=password]:not(.browser-default) + span::after,
+.matter-textfield-outlined > input.invalid[type=url]:not(.browser-default) + span::before,
+.matter-textfield-outlined > input.invalid[type=url]:not(.browser-default) + span::after,
+.matter-textfield-outlined > input.invalid[type=time]:not(.browser-default) + span::before,
+.matter-textfield-outlined > input.invalid[type=time]:not(.browser-default) + span::after,
+.matter-textfield-outlined > input.invalid[type=date]:not(.browser-default) + span::before,
+.matter-textfield-outlined > input.invalid[type=date]:not(.browser-default) + span::after,
+.matter-textfield-outlined > input.invalid[type=datetime]:not(.browser-default) + span::before,
+.matter-textfield-outlined > input.invalid[type=datetime]:not(.browser-default) + span::after,
+.matter-textfield-outlined > input.invalid[type=datetime-local]:not(.browser-default) + span::before,
+.matter-textfield-outlined > input.invalid[type=datetime-local]:not(.browser-default) + span::after,
+.matter-textfield-outlined > input.invalid[type=tel]:not(.browser-default) + span::before,
+.matter-textfield-outlined > input.invalid[type=tel]:not(.browser-default) + span::after,
+.matter-textfield-outlined > input.invalid[type=number]:not(.browser-default) + span::before,
+.matter-textfield-outlined > input.invalid[type=number]:not(.browser-default) + span::after,
+.matter-textfield-outlined > input.invalid[type=search]:not(.browser-default) + span::before,
+.matter-textfield-outlined > input.invalid[type=search]:not(.browser-default) + span::after 
+{
+	border-top-color: var(--color-danger) !important;
+	box-shadow: inset 0 1px var(--color-danger) !important;
+}
+
+/* Disabled */
+.matter-textfield-outlined > input:disabled,
+.matter-textfield-outlined > input:disabled + span,
+.matter-textfield-outlined > textarea:disabled,
+.matter-textfield-outlined > textarea:disabled + span {
+	border-color: transparent var(--matter-helper-safari1) var(--matter-helper-safari1) !important;
+	color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.38);
+	pointer-events: none;
+}
+
+.matter-textfield-outlined > input:disabled + span::before,
+.matter-textfield-outlined > input:disabled + span::after,
+.matter-textfield-outlined > textarea:disabled + span::before,
+.matter-textfield-outlined > textarea:disabled + span::after {
+	border-top-color: var(--matter-helper-safari1) !important;
+}
+
+.matter-textfield-outlined > input:disabled:placeholder-shown,
+.matter-textfield-outlined > input:disabled:placeholder-shown + span,
+.matter-textfield-outlined > textarea:disabled:placeholder-shown,
+.matter-textfield-outlined > textarea:disabled:placeholder-shown + span {
+	border-top-color: var(--matter-helper-safari1) !important;
+}
+
+.matter-textfield-outlined > input:disabled:placeholder-shown + span::before,
+.matter-textfield-outlined > input:disabled:placeholder-shown + span::after,
+.matter-textfield-outlined > textarea:disabled:placeholder-shown + span::before,
+.matter-textfield-outlined > textarea:disabled:placeholder-shown + span::after {
+	border-top-color: transparent !important;
+}
+
+/* Faster transition in Safari for less noticable fractional font-size issue */
+@media not all and (min-resolution:.001dpcm) {
+	@supports (-webkit-appearance:none) {
+		.matter-textfield-outlined > input,
+		.matter-textfield-outlined > input + span,
+		.matter-textfield-outlined > textarea,
+		.matter-textfield-outlined > textarea + span,
+		.matter-textfield-outlined > input + span::before,
+		.matter-textfield-outlined > input + span::after,
+		.matter-textfield-outlined > textarea + span::before,
+		.matter-textfield-outlined > textarea + span::after {
+			transition-duration: 0.1s;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+/*STANDARD*/
+.matter-textfield-standard {
+	--matter-helper-theme: var(--matter-theme-rgb, var(--matter-primary-rgb, 33, 150, 243));
+	position: relative;
+	display: inline-block;
+	font-family: var(--matter-font-family, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+/* Input, Textarea */
+.matter-textfield-standard > input,
+.matter-textfield-standard > textarea {
+	display: block;
+	box-sizing: border-box;
+	margin: 0;
+	border: none;
+	border-top: solid 24px transparent;
+	border-bottom: solid 1px rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.6);
+	padding: 0 0 7px;
+	width: 100%;
+	height: inherit;
+	color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.87);
+	-webkit-text-fill-color: currentColor; /* Safari */
+	background-color: transparent;
+	box-shadow: none; /* Firefox */
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	caret-color: rgb(var(--matter-helper-theme));
+	transition: border-bottom 0.2s, background-color 0.2s;
+}
+
+/* Span */
+.matter-textfield-standard > input + span,
+.matter-textfield-standard > textarea + span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: block;
+	box-sizing: border-box;
+	padding: 7px 0 0;
+	color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.6);
+	font-size: 75%;
+	line-height: 18px;
+	pointer-events: none;
+	transition: color 0.2s, font-size 0.2s, line-height 0.2s;
+}
+
+/* Underline */
+.matter-textfield-standard > input + span::after,
+.matter-textfield-standard > textarea + span::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	display: block;
+	width: 100%;
+	height: 2px;
+	background-color: rgb(var(--matter-helper-theme));
+	transform-origin: bottom center;
+	transform: scaleX(0);
+	transition: transform 0.2s;
+}
+
+/* Hover */
+.matter-textfield-standard:hover > input,
+.matter-textfield-standard:hover > textarea {
+	border-bottom-color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.87);
+}
+
+/* Placeholder-shown */
+.matter-textfield-standard > input:not(:focus):placeholder-shown + span,
+.matter-textfield-standard > textarea:not(:focus):placeholder-shown + span {
+	font-size: inherit;
+	line-height: 56px;
+}
+
+/* Focus */
+.matter-textfield-standard > input:focus,
+.matter-textfield-standard > textarea:focus {
+	outline: none;
+}
+
+.matter-textfield-standard > input:focus + span,
+.matter-textfield-standard > textarea:focus + span {
+	color: rgb(var(--matter-helper-theme));
+}
+
+.matter-textfield-standard > input:focus + span::after,
+.matter-textfield-standard > textarea:focus + span::after {
+	transform: scale(1);
+}
+
+.matter-textfield-standard > input.invalid[type=text]:not(.browser-default),
+.matter-textfield-standard > input.invalid[type=text]:not(.browser-default):focus,
+.matter-textfield-standard > input.invalid[type=password]:not(.browser-default),
+.matter-textfield-standard > input.invalid[type=password]:not(.browser-default):focus,
+.matter-textfield-standard > input.invalid[type=email]:not(.browser-default),
+.matter-textfield-standard > input.invalid[type=email]:not(.browser-default):focus,
+.matter-textfield-standard > input.invalid[type=url]:not(.browser-default),
+.matter-textfield-standard > input.invalid[type=url]:not(.browser-default):focus,
+.matter-textfield-standard > input.invalid[type=time]:not(.browser-default),
+.matter-textfield-standard > input.invalid[type=time]:not(.browser-default):focus,
+.matter-textfield-standard > input.invalid[type=date]:not(.browser-default),
+.matter-textfield-standard > input.invalid[type=date]:not(.browser-default):focus,
+.matter-textfield-standard > input.invalid[type=datetime]:not(.browser-default),
+.matter-textfield-standard > input.invalid[type=datetime]:not(.browser-default):focus,
+.matter-textfield-standard > input.invalid[type=datetime-local]:not(.browser-default),
+.matter-textfield-standard > input.invalid[type=datetime-local]:not(.browser-default):focus,
+.matter-textfield-standard > input.invalid[type=tel]:not(.browser-default),
+.matter-textfield-standard > input.invalid[type=tel]:not(.browser-default):focus,
+.matter-textfield-standard > input.invalid[type=number]:not(.browser-default),
+.matter-textfield-standard > input.invalid[type=number]:not(.browser-default):focus,
+.matter-textfield-standard > input.invalid[type=search]:not(.browser-default),
+.matter-textfield-standard > input.invalid[type=search]:not(.browser-default):focus
+{
+	border-bottom: 1px solid var(--color-danger);
+	-webkit-box-shadow: 0 0.3px 0 0 var(--color-danger);
+	box-shadow: 0 0.3px 0 0 var(--color-danger);
+}
+/* Disabled */
+.matter-textfield-standard > input:disabled,
+.matter-textfield-standard > textarea:disabled {
+	border-bottom-color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.38);
+	color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.38);
+}
+
+.matter-textfield-standard > input:disabled + span,
+.matter-textfield-standard > textarea:disabled + span {
+	color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.38);
+}
+
+/* Faster transition in Safari for less noticable fractional font-size issue */
+@media not all and (min-resolution:.001dpcm) {
+	@supports (-webkit-appearance:none) {
+		.matter-textfield-standard > input,
+		.matter-textfield-standard > input + span,
+		.matter-textfield-standard > input + span::after,
+
+		.time-picker > input + .my-timepicker-div + span,
+		.time-picker > input + .my-timepicker-div + span::after,
+
+		.autocomplete-input > input + .autocomplete-content + span,
+		.autocomplete-input > input + .autocomplete-content + span::after,
+
+		.matter-textfield-standard > textarea,
+		.matter-textfield-standard > textarea + span,
+		.matter-textfield-standard > textarea + span::after {
+			transition-duration: 0.1s;
+		}
+	}
+}
+
+
+/*TIME PICKER & AUTO COMPLETE*/
+.time-picker > input + .my-timepicker-div + span,
+.autocomplete-input > input + .autocomplete-content + span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: block;
+	box-sizing: border-box;
+	/*	padding: 7px 0 0;*/
+	color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.6);
+	font-size: 75%;
+	line-height: 18px;
+	pointer-events: none;
+	transition: color 0.2s, font-size 0.2s, line-height 0.2s;
+}
+
+.time-picker > input + .my-timepicker-div + span::after,
+.autocomplete-input > input + .autocomplete-content + span::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	display: block;
+	width: 100%;
+	height: 2px;
+	background-color: var(--color-primary);
+	transform-origin: bottom center;
+	transform: scaleX(0);
+	transition: transform 0.2s;
+}
+
+.time-picker > input:not(:focus):placeholder-shown + .my-timepicker-div + span,
+.autocomplete-input > input:not(:focus):placeholder-shown + .autocomplete-content + span {
+	font-size: inherit;
+	line-height: 56px;
+}
+
+.time-picker > input:focus + .my-timepicker-div + span,
+.autocomplete-input > input:focus + .autocomplete-content + span {
+	color: var(--color-primary);
+}
+
+.time-picker > input:focus + .my-timepicker-div + span::after,
+.autocomplete-input > input:focus + .autocomplete-content + span::after {
+	transform: scale(1);
+}
+
+.time-picker > input[type=text]:not(.browser-default):focus + .my-timepicker-div + span + i,
+.autocomplete-input > input[type=text]:not(.browser-default):focus + .autocomplete-content + span + i  {
+	color: rgb(var(--matter-helper-theme));
+}
+
+.autocomplete-content.dropdown-content {
+	padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*SELECT*/
+.select-wrapper input.select-dropdown {
+	border: 0 !important;
+	margin: 0 !important;
+	border-top: 0.5rem solid transparent !important;
+}
+
+.select-flat .select-wrapper input.select-dropdown {
+	border: 0 !important;
+	margin: 0 !important;
+	border-top: 0 !important;
+}
+
+.select-wrapper > .dropdown-content {
+	width: 110% !important;
+	max-width: none; 
+	top: -5px !important;
+	left: -19px !important;
+}
+
+.select-wrapper {
+	display: block;
+	box-sizing: border-box;
+	margin: 0;
+	border: none;
+	border-top: solid 10px transparent;
+	border-bottom: solid 1px rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.6);
+	/*padding: 0 0 7px;*/
+	width: 100%;
+	height: inherit;
+	color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.87);
+	-webkit-text-fill-color: currentColor; /* Safari */
+	background-color: transparent;
+	box-shadow: none; /* Firefox */
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	caret-color: rgb(var(--matter-helper-theme));
+	transition: border-bottom 0.2s, background-color 0.2s;
+}
+
+.select-wrapper:hover {
+	/*border-bottom: solid 1px rgb(var(--matter-helper-theme));*/
+}
+
+.select-wrapper:hover + span {
+	color: rgb(var(--matter-helper-theme));
+}
+
+.select-wrapper:hover > .caret {
+	color: rgb(var(--matter-helper-theme));
+}
+
+.select-wrapper + span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: block;
+	box-sizing: border-box;
+	padding: 7px 0 0;
+	color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.6);
+	font-size: 75%;
+	line-height: 18px;
+	pointer-events: none;
+	transition: color 0.2s, font-size 0.2s, line-height 0.2s;
+}
+
+
+
+/*SELECT WITH SEARCH*/
+.input-select-search {
+	padding: 0.4rem 1rem;
+	border-bottom: 1px solid #eee;
+}
+
+.input-select-search > input {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border: 1px solid var(--color-dark3);
+	border-radius: 4px;
+	-webkit-transition: 0.1s;
+	transition: 0.1s;
+	outline: none;
+	font-size: 16px;
+}
+
+.input-select-search > input:focus {
+	border-color: var(--color-primary) var(--color-primary) var(--color-primary);
+	box-shadow: inset 1px 0 var(--color-primary), inset -1px 0 var(--color-primary), inset 0 -1px var(--color-primary), inset 0 1px var(--color-primary);
+}
+
+/*CENTER OPTION*/
+.center-option > .dropdown-content > li {
+	text-align: center !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.matter-textfield-outlined.no-span > input,
+.matter-textfield-outlined.no-span > textarea {
+	box-sizing: border-box;
+	margin: 0;
+	border-style: solid;
+	border-width: 1px;
+	border-color: transparent var(--matter-helper-safari2) var(--matter-helper-safari2);
+	border-radius: 4px;
+	padding: 10px 13px 10px;
+	width: 100%;
+	height: inherit;
+	color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.87);
+	-webkit-text-fill-color: currentColor; /* Safari */
+	background-color: transparent;
+	box-shadow: inset 1px 0 transparent, inset -1px 0 transparent, inset 0 -1px transparent;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	caret-color: var(--matter-helper-theme);
+	transition: border 0.2s, box-shadow 0.2s;
+}
+
+.matter-textfield-outlined.no-span > input:not(:focus):placeholder-shown,
+.matter-textfield-outlined.no-span > textarea:not(:focus):placeholder-shown {
+	border-top-color: var(--matter-helper-safari2);
+}
+
+/* Span */
+.matter-textfield-outlined.no-span > input + span,
+.matter-textfield-outlined.no-span > textarea + span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	width: 100%;
+	max-height: 100%;
+	color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.6);
+	font-size: 75%;
+	line-height: 15px;
+	cursor: text;
+	transition: color 0.2s, font-size 0.2s, line-height 0.2s;
+}
+
+.matter-textfield-outlined.no-span > input:not(:focus):placeholder-shown + span,
+.matter-textfield-outlined.no-span > textarea:not(:focus):placeholder-shown + span {
+	font-size: inherit;
+	line-height: 68px;
+}
+
+/* Corners */
+.matter-textfield-outlined.no-span > input + span::before,
+.matter-textfield-outlined.no-span > input + span::after,
+.matter-textfield-outlined.no-span > textarea + span::before,
+.matter-textfield-outlined.no-span > textarea + span::after {
+	content: "";
+	display: block;
+	box-sizing: border-box;
+	margin-top: 6px;
+	border-top: solid 1px var(--matter-helper-safari2);
+	min-width: 10px;
+	height: 8px;
+	pointer-events: none;
+	box-shadow: inset 0 1px transparent;
+	transition: border 0.2s, box-shadow 0.2s;
+}
+
+.matter-textfield-outlined.no-span > input + span::before,
+.matter-textfield-outlined.no-span > textarea + span::before {
+	margin-right: 0px !important;
+	border-left: solid 1px transparent;
+	border-radius: 4px 0;
+}
+
+.matter-textfield-outlined.no-span > input + span::after,
+.matter-textfield-outlined.no-span > textarea + span::after {
+	flex-grow: 1;
+	margin-left: 0px !important;
+	border-right: solid 1px transparent;
+	border-radius: 0 4px;
+}
+
+.matter-textfield-outlined.no-span > input:not(:focus):placeholder-shown + span::before,
+.matter-textfield-outlined.no-span > textarea:not(:focus):placeholder-shown + span::before,
+.matter-textfield-outlined.no-span > input:not(:focus):placeholder-shown + span::after,
+.matter-textfield-outlined.no-span > textarea:not(:focus):placeholder-shown + span::after {
+	border-top-color: transparent;
+}
+
+/* Hover */
+.matter-textfield-outlined.no-span:hover > input,
+.matter-textfield-outlined.no-span:hover > textarea {
+	border-color: transparent var(--matter-helper-safari3) var(--matter-helper-safari3);
+}
+
+.matter-textfield-outlined.no-span:hover > input + span::before,
+.matter-textfield-outlined.no-span:hover > textarea + span::before,
+.matter-textfield-outlined.no-span:hover > input + span::after,
+.matter-textfield-outlined.no-span:hover > textarea + span::after {
+	border-top-color: var(--matter-helper-safari3);
+}
+
+.matter-textfield-outlined.no-span:hover > input:not(:focus):placeholder-shown,
+.matter-textfield-outlined.no-span:hover > textarea:not(:focus):placeholder-shown {
+	border-color: var(--matter-helper-safari3);
+}
+
+/* Focus */
+.matter-textfield-outlined.no-span > input:focus,
+.matter-textfield-outlined.no-span > textarea:focus {
+	border-color: transparent var(--color-primary) var(--color-primary);
+	box-shadow: inset 1px 0 var(--color-primary), inset -1px 0 var(--color-primary), inset 0 -1px var(--color-primary);
+	outline: none;
+}
+
+.matter-textfield-outlined.no-span > input:focus + span,
+.matter-textfield-outlined.no-span > textarea:focus + span {
+	color: var(--color-primary);
+}
+
+.matter-textfield-outlined.no-span > input:focus + span::before,
+.matter-textfield-outlined.no-span > input:focus + span::after {
+	border-top-color: var(--color-primary) !important;
+	box-shadow: inset 0 1px var(--color-primary);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*INPUT WITH ICON*/
+.icon-input > input[type=text]:not(.browser-default):focus + span + i,
+.icon-input > input[type=text]:not(.browser-default):focus + .my-timepicker-div + span + i {
+	color: rgb(var(--matter-helper-theme));
+}
+
+.icon-input i {
+	position: absolute;
+	display: flex;
+	top: 24px;
+	background: #fff;
+	padding: 0 8px 0 8px;
+	cursor: pointer;
+}
+
+.matter-textfield-flats.icon-input i {
+	top: 27%;
+}
+
+.matter-textfield-filled.icon-input i {
+	background-color: transparent;
+}
+
+.icon-input > input:focus + span + i,
+.icon-input > input:focus + i,
+.icon-input > input:focus + .my-timepicker-div + span + i,
+.icon-input > input:focus + .my-timepicker-div + i {
+	color: var(--color-primary) !important
+}
+
+.icon-input.right-icon i {
+	right: 0;
+}
+
+.icon-input.left-icon i {
+	left: 0;
+	background-color: transparent;
+	padding-right: 0;
+	padding-left: 13px;
+}
+
+.icon-input.left-icon input {
+	padding-left: 3.2rem !important
+}
+
+.matter-textfield-outlined.icon-input i {
+	top: 15px;
+}
+
+
+
+
+
+
+/*BG INPUT*/
+.matter-textfield-outlined.bg-input input{
+	background-color: #fff;
+	border-color: transparent;
+	border-top-color: transparent !important;
+}
+
+.matter-textfield-outlined.bg-input input:hover{
+	border-color: transparent !important;
+	border-top-color: transparent !important;
+}
+
+.matter-textfield-outlined.bg-input input:focus{
+	border-top-color: transparent !important;
+	border-color: transparent transparent transparent;
+	box-shadow: inset 1px 0 transparent, inset -1px 0 transparent, inset 0 -1px transparent;
+	outline: none;
+}
+
+.matter-textfield-outlined.bg-input input::after{
+	border-color: transparent !important;
+	border-top-color: transparent !important;
+}
+
+.matter-textfield-outlined.bg-input input::before{
+	border-color: transparent !important;
+	border-top-color: transparent !important;
+}
+
+
+
+
+
+
+
+
+
+/*INPUT FLAT*/
+.matter-textfield-flats {
+	--matter-helper-theme: var(--color-primary);
+	position: relative;
+	display: inline-block;
+	font-family: var(--matter-font-family, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+.matter-textfield-flats > input {
+	box-sizing: border-box;
+	margin: 0;
+	border:0;
+	border-radius: 4px;
+	padding: 15px 13px 15px;
+	width: 100%;
+	height: inherit;
+	color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.87);
+	-webkit-text-fill-color: currentColor; /* Safari */
+	background-color: var(--color-dark4);
+	box-shadow: inset 1px 0 transparent, inset -1px 0 transparent, inset 0 -1px transparent;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	caret-color: var(--matter-helper-theme);
+	transition: 0.1s all;
+}
+
+.matter-textfield-flats > input:not(:focus):placeholder-shown {
+	border-top-color: var(--matter-helper-safari2);
+}
+
+/* Span */
+.matter-textfield-flats > input + span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	width: 100%;
+	max-height: 100%;
+	color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.6);
+	font-size: 75%;
+	line-height: 15px;
+	cursor: text;
+	transition: color 0.2s, font-size 0.2s, line-height 0.2s;
+}
+
+.matter-textfield-flats > .select-wrapper + span {
+	padding: 0 !important;
+}
+
+.matter-textfield-flats > input:not(:focus):placeholder-shown + span{
+	font-size: inherit;
+	line-height: 68px;
+}
+
+/* Corners */
+.matter-textfield-flats > input + span::before,
+.matter-textfield-flats > input + span::after {
+	content: "";
+	display: block;
+	box-sizing: border-box;
+	margin-top: 6px;
+	border-top: solid 1px var(--matter-helper-safari2);
+	min-width: 10px;
+	height: 8px;
+	pointer-events: none;
+	box-shadow: inset 0 1px transparent;
+	transition: border 0.2s, box-shadow 0.2s;
+}
+
+.matter-textfield-flats > input + span::before {
+	margin-right: 4px;
+	border-left: solid 1px transparent;
+	border-radius: 4px 0;
+}
+
+.matter-textfield-flats > input + span::after {
+	flex-grow: 1;
+	margin-left: 4px;
+	border-right: solid 1px transparent;
+	border-radius: 0 4px;
+}
+
+.matter-textfield-flats > input:not(:focus):placeholder-shown + span::before,
+.matter-textfield-flats > input:not(:focus):placeholder-shown + span::after {
+	border-top-color: transparent;
+}
+
+/* Hover */
+.matter-textfield-flats:hover > input {
+	background-color: var(--color-dark10);
+}
+
+.matter-textfield-flats:hover > input + span::before,
+.matter-textfield-flats:hover > input + span::after {
+	border-top-color: var(--matter-helper-safari3);
+}
+
+.matter-textfield-flats:hover > input:not(:focus):placeholder-shown {
+	border-color: var(--matter-helper-safari3);
+}
+
+/* Focus */
+.matter-textfield-flats > input:focus {
+/*	border-color: transparent var(--color-primary) var(--color-primary);
+	box-shadow: inset 1px 0 var(--color-primary), inset -1px 0 var(--color-primary), inset 0 -1px var(--color-primary);*/
+	outline: none;
+}
+
+.matter-textfield-flats > input:focus + span {
+	color: var(--color-primary);
+}
+
+.matter-textfield-flats > input:focus + span::before,
+.matter-textfield-flats > input:focus + span::after {
+/*	border-top-color: var(--color-primary) !important;
+	box-shadow: inset 0 1px var(--color-primary);*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Input, Textarea */
+.matter-textfield-flat > input,
+.matter-textfield-flat > textarea,
+.matter-textfield-flat > .select-wrapper {
+	box-sizing: border-box;
+	margin: 0;
+	border:0;
+	border-radius: 4px;
+	padding: 15px 13px 15px;
+	width: 100%;
+	height: inherit;
+	color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.87);
+	-webkit-text-fill-color: currentColor; /* Safari */
+	background-color: var(--color-dark4);
+	box-shadow: inset 1px 0 transparent, inset -1px 0 transparent, inset 0 -1px transparent;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	caret-color: var(--matter-helper-theme);
+	transition: 0.1s all;
+}
+
+.matter-textfield-flat > .select-wrapper {
+	padding: 0px 13px 0px !important;
+	margin: 0.5rem 0
+}
+
+.select-wrapper .caret {
+	position: absolute;
+	right: 0.8rem;
+	top: 0; 
+	bottom: 0;
+	margin: auto 0;
+	z-index: 0;
+	fill: rgba(0, 0, 0, 0.87);
+	line-height: 3rem;
+}
+
+.matter-textfield-flat > .select-wrapper + span::after {
+	margin-left: 0 !important;
+}
+
+.matter-textfield-flat > .select-wrapper + span::before {
+	margin-right: 0 !important;
+}
+
+.matter-textfield-flat > input:not(:focus):placeholder-shown,
+.matter-textfield-flat > textarea:not(:focus):placeholder-shown,
+.matter-textfield-flat > .select-wrapper:not(:focus):placeholder-shown {
+	border-top-color: var(--matter-helper-safari2);
+}
+
+/* Span */
+.matter-textfield-flat > input + span,
+.matter-textfield-flat > textarea + span,
+.matter-textfield-flat > .select-wrapper + span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	width: 100%;
+	max-height: 100%;
+	color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.6);
+	font-size: 75%;
+	line-height: 15px;
+	cursor: text;
+	transition: color 0.2s, font-size 0.2s, line-height 0.2s;
+}
+
+.matter-textfield-flat > .select-wrapper + span {
+	padding: 0 !important;
+}
+
+.matter-textfield-flat > input:not(:focus):placeholder-shown + span,
+.matter-textfield-flat > textarea:not(:focus):placeholder-shown + span,
+.matter-textfield-flat > .select-wrapper:not(:focus):placeholder-shown + span {
+	font-size: inherit;
+	line-height: 68px;
+}
+
+/* Corners */
+.matter-textfield-flat > input + span::before,
+.matter-textfield-flat > input + span::after,
+.matter-textfield-flat > textarea + span::before,
+.matter-textfield-flat > textarea + span::after,
+.matter-textfield-flat > .select-wrapper + span::before,
+.matter-textfield-flat > .select-wrapper + span::after {
+	content: "";
+	display: block;
+	box-sizing: border-box;
+	margin-top: 6px;
+	border-top: solid 1px var(--matter-helper-safari2);
+	min-width: 10px;
+	height: 8px;
+	pointer-events: none;
+	box-shadow: inset 0 1px transparent;
+	transition: border 0.2s, box-shadow 0.2s;
+}
+
+.matter-textfield-flat > input + span::before,
+.matter-textfield-flat > textarea + span::before,
+.matter-textfield-flat > .select-wrapper + span::before {
+	margin-right: 4px;
+	border-left: solid 1px transparent;
+	border-radius: 4px 0;
+}
+
+.matter-textfield-flat > input + span::after,
+.matter-textfield-flat > textarea + span::after,
+.matter-textfield-flat > .select-wrapper + span::after {
+	flex-grow: 1;
+	margin-left: 4px;
+	border-right: solid 1px transparent;
+	border-radius: 0 4px;
+}
+
+.matter-textfield-flat > input:not(:focus):placeholder-shown + span::before,
+.matter-textfield-flat > textarea:not(:focus):placeholder-shown + span::before,
+.matter-textfield-flat > .select-wrapper:not(:focus):placeholder-shown + span::before,
+.matter-textfield-flat > input:not(:focus):placeholder-shown + span::after,
+.matter-textfield-flat > textarea:not(:focus):placeholder-shown + span::after,
+.matter-textfield-flat > .select-wrapper:not(:focus):placeholder-shown + span::after {
+	border-top-color: transparent;
+}
+
+/* Hover */
+.matter-textfield-flat:hover > input,
+.matter-textfield-flat:hover > textarea,
+.matter-textfield-flat:hover > .select-wrapper {
+	background-color: var(--color-dark10);
+}
+
+.matter-textfield-flat:hover > input + span::before,
+.matter-textfield-flat:hover > textarea + span::before,
+.matter-textfield-flat:hover > .select-wrapper + span::before,
+.matter-textfield-flat:hover > input + span::after,
+.matter-textfield-flat:hover > textarea + span::after,
+.matter-textfield-flat:hover > .select-wrapper + span::after {
+	border-top-color: var(--matter-helper-safari3);
+}
+
+.matter-textfield-flat:hover > input:not(:focus):placeholder-shown,
+.matter-textfield-flat:hover > textarea:not(:focus):placeholder-shown,
+.matter-textfield-flat:hover > .select-wrapper:not(:focus):placeholder-shown {
+	border-color: var(--matter-helper-safari3);
+}
+
+/* Focus */
+.matter-textfield-flat > input:focus,
+.matter-textfield-flat > textarea:focus,
+.matter-textfield-flat > .select-wrapper:focus {
+	border-color: transparent var(--color-primary) var(--color-primary);
+	box-shadow: inset 1px 0 var(--color-primary), inset -1px 0 var(--color-primary), inset 0 -1px var(--color-primary);
+	outline: none;
+}
+
+.matter-textfield-flat > input:focus + span,
+.matter-textfield-flat > textarea:focus + span,
+.matter-textfield-flat > .select-wrapper:focus + span {
+	color: var(--color-primary);
+}
+
+.matter-textfield-flat > input:focus + span::before,
+.matter-textfield-flat > input:focus + span::after,
+.matter-textfield-flat > textarea:focus + span::before,
+.matter-textfield-flat > textarea:focus + span::after,
+.matter-textfield-flat > .select-wrapper:focus + span::before,
+.matter-textfield-flat > .select-wrapper:focus + span::after {
+	border-top-color: var(--color-primary) !important;
+	box-shadow: inset 0 1px var(--color-primary);
+}
+
+/*VALIDATE FOCUS*/
+.matter-textfield-flat > input.invalid[type=email]:not(.browser-default):focus,
+.matter-textfield-flat > input.invalid[type=password]:not(.browser-default):focus,
+.matter-textfield-flat > input.invalid[type=url]:not(.browser-default):focus,
+.matter-textfield-flat > input.invalid[type=time]:not(.browser-default):focus,
+.matter-textfield-flat > input.invalid[type=date]:not(.browser-default):focus,
+.matter-textfield-flat > input.invalid[type=datetime]:not(.browser-default):focus,
+.matter-textfield-flat > input.invalid[type=datetime-local]:not(.browser-default):focus,
+.matter-textfield-flat > input.invalid[type=tel]:not(.browser-default):focus,
+.matter-textfield-flat > input.invalid[type=number]:not(.browser-default):focus,
+.matter-textfield-flat > input.invalid[type=search]:not(.browser-default):focus
+{
+	border-color: transparent var(--color-danger) var(--color-danger) !important;
+	box-shadow: inset 1px 0 var(--color-danger), inset -1px 0 var(--color-danger), inset 0 -1px var(--color-danger) !important;
+	outline: none;
+}
+
+.matter-textfield-flat > input.invalid[type=email]:not(.browser-default):focus + span,
+.matter-textfield-flat > input.invalid[type=password]:not(.browser-default):focus + span,
+.matter-textfield-flat > input.invalid[type=url]:not(.browser-default):focus + span,
+.matter-textfield-flat > input.invalid[type=time]:not(.browser-default):focus + span,
+.matter-textfield-flat > input.invalid[type=date]:not(.browser-default):focus + span,
+.matter-textfield-flat > input.invalid[type=datetime]:not(.browser-default):focus + span,
+.matter-textfield-flat > input.invalid[type=datetime-local]:not(.browser-default):focus + span,
+.matter-textfield-flat > input.invalid[type=tel]:not(.browser-default):focus + span,
+.matter-textfield-flat > input.invalid[type=number]:not(.browser-default):focus + span,
+.matter-textfield-flat > input.invalid[type=search]:not(.browser-default):focus + span,
+{
+	color: var(--color-danger) !important;
+}
+
+.matter-textfield-flat > input.invalid[type=email]:not(.browser-default):focus + span::before,
+.matter-textfield-flat > input.invalid[type=email]:not(.browser-default):focus + span::after,
+.matter-textfield-flat > input.invalid[type=password]:not(.browser-default):focus + span::before,
+.matter-textfield-flat > input.invalid[type=password]:not(.browser-default):focus + span::after,
+.matter-textfield-flat > input.invalid[type=url]:not(.browser-default):focus + span::before,
+.matter-textfield-flat > input.invalid[type=url]:not(.browser-default):focus + span::after,
+.matter-textfield-flat > input.invalid[type=time]:not(.browser-default):focus + span::before,
+.matter-textfield-flat > input.invalid[type=time]:not(.browser-default):focus + span::after,
+.matter-textfield-flat > input.invalid[type=date]:not(.browser-default):focus + span::before,
+.matter-textfield-flat > input.invalid[type=date]:not(.browser-default):focus + span::after,
+.matter-textfield-flat > input.invalid[type=datetime]:not(.browser-default):focus + span::before,
+.matter-textfield-flat > input.invalid[type=datetime]:not(.browser-default):focus + span::after,
+.matter-textfield-flat > input.invalid[type=datetime-local]:not(.browser-default):focus + span::before,
+.matter-textfield-flat > input.invalid[type=datetime-local]:not(.browser-default):focus + span::after,
+.matter-textfield-flat > input.invalid[type=tel]:not(.browser-default):focus + span::before,
+.matter-textfield-flat > input.invalid[type=tel]:not(.browser-default):focus + span::after,
+.matter-textfield-flat > input.invalid[type=number]:not(.browser-default):focus + span::before,
+.matter-textfield-flat > input.invalid[type=number]:not(.browser-default):focus + span::after,
+.matter-textfield-flat > input.invalid[type=search]:not(.browser-default):focus + span::before,
+.matter-textfield-flat > input.invalid[type=search]:not(.browser-default):focus + span::after,
+{
+	border-top-color: var(--color-danger) !important;
+	box-shadow: inset 0 1px var(--color-danger) !important;
+}
+
+
+/*VALIDATE NO FOCUS*/
+.matter-textfield-flat > input.invalid[type=email]:not(.browser-default),
+.matter-textfield-flat > input.invalid[type=password]:not(.browser-default),
+.matter-textfield-flat > input.invalid[type=url]:not(.browser-default),
+.matter-textfield-flat > input.invalid[type=time]:not(.browser-default),
+.matter-textfield-flat > input.invalid[type=date]:not(.browser-default),
+.matter-textfield-flat > input.invalid[type=datetime]:not(.browser-default),
+.matter-textfield-flat > input.invalid[type=datetime-local]:not(.browser-default),
+.matter-textfield-flat > input.invalid[type=tel]:not(.browser-default),
+.matter-textfield-flat > input.invalid[type=number]:not(.browser-default),
+.matter-textfield-flat > input.invalid[type=search]:not(.browser-default)
+{
+	border-color: transparent var(--color-danger) var(--color-danger) !important;
+	box-shadow: inset 1px 0 var(--color-danger), inset -1px 0 var(--color-danger), inset 0 -1px var(--color-danger) !important;
+	outline: none;
+}
+
+.matter-textfield-flat > input.invalid[type=email]:not(.browser-default):focus + span,
+.matter-textfield-flat > input.invalid[type=password]:not(.browser-default):focus + span,
+.matter-textfield-flat > input.invalid[type=url]:not(.browser-default):focus + span,
+.matter-textfield-flat > input.invalid[type=time]:not(.browser-default):focus + span,
+.matter-textfield-flat > input.invalid[type=date]:not(.browser-default):focus + span,
+.matter-textfield-flat > input.invalid[type=datetime]:not(.browser-default):focus + span,
+.matter-textfield-flat > input.invalid[type=datetime-local]:not(.browser-default):focus + span,
+.matter-textfield-flat > input.invalid[type=tel]:not(.browser-default):focus + span,
+.matter-textfield-flat > input.invalid[type=number]:not(.browser-default):focus + span,
+.matter-textfield-flat > input.invalid[type=search]:not(.browser-default):focus + span
+{
+	color: var(--color-danger) !important;
+}
+
+.matter-textfield-flat > input.invalid[type=email]:not(.browser-default) + span::before,
+.matter-textfield-flat > input.invalid[type=email]:not(.browser-default) + span::after,
+.matter-textfield-flat > input.invalid[type=password]:not(.browser-default) + span::before,
+.matter-textfield-flat > input.invalid[type=password]:not(.browser-default) + span::after,
+.matter-textfield-flat > input.invalid[type=url]:not(.browser-default) + span::before,
+.matter-textfield-flat > input.invalid[type=url]:not(.browser-default) + span::after,
+.matter-textfield-flat > input.invalid[type=time]:not(.browser-default) + span::before,
+.matter-textfield-flat > input.invalid[type=time]:not(.browser-default) + span::after,
+.matter-textfield-flat > input.invalid[type=date]:not(.browser-default) + span::before,
+.matter-textfield-flat > input.invalid[type=date]:not(.browser-default) + span::after,
+.matter-textfield-flat > input.invalid[type=datetime]:not(.browser-default) + span::before,
+.matter-textfield-flat > input.invalid[type=datetime]:not(.browser-default) + span::after,
+.matter-textfield-flat > input.invalid[type=datetime-local]:not(.browser-default) + span::before,
+.matter-textfield-flat > input.invalid[type=datetime-local]:not(.browser-default) + span::after,
+.matter-textfield-flat > input.invalid[type=tel]:not(.browser-default) + span::before,
+.matter-textfield-flat > input.invalid[type=tel]:not(.browser-default) + span::after,
+.matter-textfield-flat > input.invalid[type=number]:not(.browser-default) + span::before,
+.matter-textfield-flat > input.invalid[type=number]:not(.browser-default) + span::after,
+.matter-textfield-flat > input.invalid[type=search]:not(.browser-default) + span::before,
+.matter-textfield-flat > input.invalid[type=search]:not(.browser-default) + span::after 
+{
+	border-top-color: var(--color-danger) !important;
+	box-shadow: inset 0 1px var(--color-danger) !important;
+}
+
+/* Disabled */
+.matter-textfield-flat > input:disabled,
+.matter-textfield-flat > input:disabled + span,
+.matter-textfield-flat > textarea:disabled,
+.matter-textfield-flat > textarea:disabled + span {
+	border-color: transparent var(--matter-helper-safari1) var(--matter-helper-safari1) !important;
+	color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.38);
+	pointer-events: none;
+}
+
+.matter-textfield-flat > input:disabled + span::before,
+.matter-textfield-flat > input:disabled + span::after,
+.matter-textfield-flat > textarea:disabled + span::before,
+.matter-textfield-flat > textarea:disabled + span::after {
+	border-top-color: var(--matter-helper-safari1) !important;
+}
+
+.matter-textfield-flat > input:disabled:placeholder-shown,
+.matter-textfield-flat > input:disabled:placeholder-shown + span,
+.matter-textfield-flat > textarea:disabled:placeholder-shown,
+.matter-textfield-flat > textarea:disabled:placeholder-shown + span {
+	border-top-color: var(--matter-helper-safari1) !important;
+}
+
+.matter-textfield-flat > input:disabled:placeholder-shown + span::before,
+.matter-textfield-flat > input:disabled:placeholder-shown + span::after,
+.matter-textfield-flat > textarea:disabled:placeholder-shown + span::before,
+.matter-textfield-flat > textarea:disabled:placeholder-shown + span::after {
+	border-top-color: transparent !important;
+}
+
+/* Faster transition in Safari for less noticable fractional font-size issue */
+@media not all and (min-resolution:.001dpcm) {
+	@supports (-webkit-appearance:none) {
+		.matter-textfield-flat > input,
+		.matter-textfield-flat > input + span,
+		.matter-textfield-flat > textarea,
+		.matter-textfield-flat > textarea + span,
+		.matter-textfield-flat > input + span::before,
+		.matter-textfield-flat > input + span::after,
+		.matter-textfield-flat > textarea + span::before,
+		.matter-textfield-flat > textarea + span::after {
+			transition-duration: 0.1s;
+		}
+	}
+}
+
+
+.matter-textfield-standard.no-border.no-span input{
+	border-top: 0 !important;
+	border-bottom: 0 !important;
+}
+
+.matter-textfield-standard.no-border-top input,
+.matter-textfield-standard.no-border-top textarea {
+	border-top: 0 !important;
+}
+
+
+
+.matter-textfield-filled.no-span.heigh-small textarea {
+	border-top: solid 15px transparent !important;
+}
+
+.matter-textfield-filled.no-span.heigh-small span {
+	margin-right: 2rem;
+}
+
+.input-with-delete a{
+	position: absolute;
+	right: 0.8rem;
+	margin: 0.3rem 0;
+}
+
+.input-with-delete label{
+	padding-right: 2rem
+}

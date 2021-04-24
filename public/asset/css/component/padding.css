@@ -1,0 +1,92 @@
+/*PADDING*/
+.p1 {
+	padding: 1rem !important;
+}
+
+.p05 {
+	padding: 0.5rem !important;
+}
+
+.ptb0{
+	padding-bottom: 0 !important;
+	padding-top: 0 !important;
+}
+
+.prl0 {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+.ptb05 {
+	padding-bottom: 0.5rem;
+	padding-top: 0.5rem;
+}
+
+.ptb1 {
+	padding-bottom: 1rem;
+	padding-top: 1rem;
+}
+
+.pl4-res {
+	padding-left: 0;
+}
+
+.pr2-res {
+	padding-right: 0;
+}
+
+.pl2-res {
+	padding-left: 0;
+}
+
+.p0 {
+	padding: 0 !important
+}
+
+.pb0 {
+	padding-bottom: 0 !important
+}
+
+.pb2 {
+	padding-bottom: 2rem !important
+}
+
+.pb1 {
+	padding-bottom: 1rem !important
+}
+
+.p12 {
+	padding: 12px !important
+}
+
+.pl0 {
+	padding-left: 0 !important
+}
+
+@media only screen and (min-width: 601px) {
+	.pl4-res {
+		padding-left: 4rem !important;
+	}
+
+	.pl2-res {
+		padding-left: 2rem !important;
+	}
+
+	.pr2-res {
+		padding-right: 2rem !important;
+	}
+}
+
+@media only screen and (min-width: 993px) {
+	.pl4-res {
+		padding-left: 4rem;
+	}
+
+	.pl2-res {
+		padding-left: 2rem !important;
+	}
+
+	.pr2-res {
+		padding-right: 2rem !important;
+	}
+}

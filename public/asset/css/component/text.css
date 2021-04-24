@@ -1,0 +1,184 @@
+/*TEXT*/
+
+.normal,
+p.normal,
+h1.normal,
+h2.normal,
+h3.normal,
+h4.normal,
+h5.normal,
+h6.normal,
+span.normal {
+	font-weight: normal !important;
+}
+
+.light,
+p.light,
+h1.light,
+h2.light,
+h3.light,
+h4.light,
+h5.light,
+h6.light,
+span.light {
+	font-weight: lighter !important;
+}
+
+.semibold,
+p.semibold,
+h1.semibold,
+h2.semibold,
+h3.semibold,
+h4.semibold,
+h5.semibold,
+h6.semibold,
+span.semibold {
+	font-weight: 500;
+}
+
+.bold,
+p.bold,
+h1.bold,
+h2.bold,
+h3.bold,
+h4.bold,
+h5.bold,
+h6.bold,
+span.bold {
+	font-weight: bold;
+}
+
+.bolder,
+p.bolder,
+h1.bolder,
+h2.bolder,
+h3.bolder,
+h4.bolder,
+h5.bolder,
+h6.bolder,
+span.bolder {
+	font-weight: 900;
+}
+
+p.labeling {
+	margin-bottom: 0.5rem;
+	margin-top: 0;
+}
+
+
+
+
+
+.line-icon-p {
+	font-size: 8px;
+	margin: 0 6px;
+	color: var(--color-dark3);
+}
+
+
+.line-icon-p-nl {
+	font-size: 8px;
+	margin: 0 6px 0 0;
+	color: var(--color-dark3);
+}
+
+
+.line-icon-text {
+	vertical-align: middle;
+	display: flex;
+	align-items: center;
+}
+
+.line-icon-text.block {
+	display: block !important;
+}
+
+
+
+
+.text-initial p,
+.text-initial h1,
+.text-initial h2,
+.text-initial h3,
+.text-initial h4,
+.text-initial h5,
+.text-initial h6 {
+	display: initial;
+}
+
+
+
+
+
+.text-nowarp.second-nav {
+	width: 100rem;
+}
+
+.text-nowarp.card-file {
+	width: auto;
+	height: 20px;
+}
+
+.text-nowarp span {
+	font-size: 1.2rem;
+	width: 85%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display: inline-block;
+}
+
+.text-nowarp h6,
+.text-nowarp p {
+	width: 85%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.card-file.text-nowarp span {
+	font-size: 1.1rem;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display: inline-block;
+}
+
+
+
+p.large {
+	font-size: 18px;
+}
+
+.ltext {
+	line-height: 1.5rem
+}
+
+.font-small {
+	font-size: 12px !important
+}
+
+
+
+
+.title-segmen {
+	color: var(--color-dark1);
+	margin-bottom: 0.5rem;
+	margin-top: 0;
+}
+
+
+@media only screen and (max-width: 736px){
+	.text-nowarp.second-nav {
+		width: 19rem;
+	}
+
+	.text-nowarp.second-nav.long {
+		width: 27rem;
+	}
+
+	.text-nowarp.card-file {
+		width: 19rem;
+	}
+}

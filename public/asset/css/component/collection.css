@@ -1,0 +1,82 @@
+/*LINK*/
+.collection a.collection-item {
+	color: var(--color-dark)
+}
+
+.collection a.collection-item:not(.active):hover {
+	background-color: var(--color-primary-smoth2);
+}
+
+.collection .collection-item.active {
+	background-color: transparent;
+	color: var(--color-primary);
+}
+
+/*SECONDARY CONTENT*/
+.secondary-content {
+	color: var(--color-primary);
+}
+
+/*AVATAR CONTENT*/
+.collection .collection-item.avatar {
+	min-height: 65px;
+}
+
+/*NO BORDER*/
+.collection.stripped {
+	border: 0;
+}
+
+.collection.borderles .collection-item {
+	border: 0;
+}
+
+.collection.hoverabel-bg a.collection-item {
+	background-color: transparent !important;
+	border-radius: 8px;
+}
+
+.collection.hoverabel-bg .collection-item:hover {
+	background-color: var(--color-dark5) !important;
+}
+
+
+/*NO BORDER LESS*/
+.collection.border-less {
+	border: 0;
+}
+
+.collection.border-less li{
+	border: 0;
+	margin: 1rem 0
+}
+
+
+
+/*LINK-FLAT*/
+.collection.link-flat a:hover{
+	color: var(--color-primary)
+}
+
+
+
+
+/*LEFT FLOAT LIST*/
+ul.horizontal li {
+	float: left;
+	margin-right: 1rem;
+}
+
+ul.horizontal li:last-child {
+	margin-right: 0
+}
+
+
+
+
+
+/*NO BORDER RIGHT-LEFT*/
+.collection.np-side li{
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}

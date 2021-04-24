@@ -1,0 +1,214 @@
+.tabs {
+	overflow: hidden;
+}
+
+.tab i {
+	line-height: 2;
+}
+
+.tabs.border {
+	border-bottom: 1px solid var(--color-pen-lev7);
+}
+
+
+.tabs2 {
+	position: relative;
+	overflow-x: auto;
+	overflow-y: hidden;
+	height: 48px;
+	width: 100%;
+	background-color: #fff;
+	margin: 0 auto;
+	white-space: nowrap;
+}
+
+.tabs2.tabs2-transparent {
+	background-color: transparent;
+}
+
+.tabs2.tabs2-transparent .tab a,
+.tabs2.tabs2-transparent .tab.disabled a,
+.tabs2.tabs2-transparent .tab.disabled a:hover {
+	color: rgba(255, 255, 255, 0.7);
+}
+
+.tabs2.tabs2-transparent .tab a:hover,
+.tabs2.tabs2-transparent .tab a.active {
+	color: #fff;
+}
+
+.tabs2.tabs2-transparent .indicator {
+	background-color: #fff !important;
+}
+
+.tabs2.tabs2-fixed-width {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.tabs2.tabs2-fixed-width .tab {
+	-webkit-box-flex: 1;
+	-webkit-flex-grow: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+}
+
+.tabs2 .tab {
+	display: inline-block;
+	text-align: center;
+	line-height: 48px;
+	height: 48px;
+	padding: 0;
+	margin: 0;
+}
+
+.tabs2 .tab a {
+	color: var(--color-primary);
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 0 24px;
+	font-size: 14px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	-webkit-transition: color .28s ease, background-color .28s ease, font-weight .28s;
+	transition: color .28s ease, background-color .28s ease, font-weight .28s;
+}
+
+.tabs2 .tab a:focus, .tabs2 .tab a:focus.active {
+	background-color: var(--color-primary-smoth2);
+	outline: none;
+}
+
+.tabs2 .tab a:hover, .tabs2 .tab a.active {
+	background-color: transparent;
+	color: var(--color-primary);
+}
+
+.tabs2 .tab.disabled a,
+.tabs2 .tab.disabled a:hover {
+	color: var(--color-pen-lev3);
+	cursor: default;
+}
+
+.tabs2 .indicator {
+	position: absolute;
+	bottom: 0;
+	height: 2px;
+	background-color: var(--color-primary);
+	will-change: left, right;
+}
+
+.tab-content .tabs2 .indicator {
+	margin: 0 4rem;
+	border-radius: 8px 8px 0 0;
+	height: 3.5px !important;
+}
+
+.tab-content .tabs.small-land .indicator {
+	margin: 0 1rem !important;
+}
+
+@media only screen and (max-width: 992px) {
+	.tabs2 {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+	}
+	.tabs2 .tab {
+		-webkit-box-flex: 1;
+		-webkit-flex-grow: 1;
+		-ms-flex-positive: 1;
+		flex-grow: 1;
+	}
+	.tabs2 .tab a {
+		padding: 0 12px;
+	}
+	.tab-content .tabs2 .indicator {
+		margin: 0 1rem;
+		border-radius: 8px 8px 0 0;
+		height: 3.5px !important;
+	}
+
+	.tab-content .tabs.small-land .indicator {
+		margin: 0 1rem !important;
+	}
+}
+
+
+.tabs.inline {
+	background-color: transparent;
+	position: relative;
+	top: 1.3px;
+}
+
+
+/*TABS SCROLL*/
+.tabs-scroll .prev {
+	border-right: 1px solid #ddd; 
+	padding: 0;
+	text-align: center;
+}
+
+.tabs-scroll .next {
+	border-left: 1px solid #ddd; 
+	padding: 0;
+	text-align: center;
+}
+
+.tabs-scroll .content {
+	padding: 0;
+}
+
+
+
+
+.tab-menu-page {
+	position: relative; 
+	/*	top: -20px; */
+	border-bottom: 1px solid var(--color-dark3);
+	/*	border-top: 1px solid var(--color-dark3)*/
+}
+
+
+
+
+
+
+/*TABS INDICATOR NEW*/
+.tabs.indicatorv2 .indicator {
+	margin: 0 1.5rem;
+	border-radius: 8px 8px 0 0;
+	height: 3.5px !important;
+}
+
+@media only screen and (min-width: 736px) {
+	.tabs.indicatorv2 .indicator {
+		margin: 0 4rem;
+		border-radius: 8px 8px 0 0;
+		height: 3.5px !important;
+	}
+}
+
+@media only screen and (min-width: 993px) {
+	.tabs.indicatorv2 .indicator {
+		margin: 0 4rem;
+		border-radius: 8px 8px 0 0;
+		height: 3.5px !important;
+	}
+
+	.tabs.small-land.indicatorv2 .indicator {
+		margin: 0 1rem !important;
+	}
+}
+
+@media only screen and (max-width: 736px) {
+	.tabs.inline {
+		background-color: transparent;
+		position: relative;
+		top: 1.2px;
+	}
+}
